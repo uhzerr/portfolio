@@ -347,8 +347,6 @@ section.animate-in .item:nth-child(8) {
 .logo-container {
     width: 48px;
     height: 48px;
-    border-radius: 10px;
-    background-color: var(--logo-bg);
     display: flex;
     align-items: center;
     justify-content: center;
