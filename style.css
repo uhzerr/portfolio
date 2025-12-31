@@ -23,7 +23,8 @@
 
     /* Layout */
     --container-width: 720px;
-    --spacing-section: 180px;
+    --spacing-section: 100px;
+    /* Reduced from 180px */
 
     /* Animation */
     --ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);
@@ -89,17 +90,23 @@ body::after {
 body::before {
     content: "";
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
     pointer-events: none;
     z-index: 99;
+    animation: grain-animation 0.4s steps(10) infinite;
+    opacity: 0.7;
 }
 
-/* Animated Grain Overlay */
-/* Removed Grain Overlay */
+@media (prefers-color-scheme: dark) {
+    body::before {
+        filter: invert(1);
+        opacity: 0.4;
+    }
+}
 
 main {
     width: 100%;
@@ -109,13 +116,16 @@ main {
     gap: var(--spacing-section);
     position: relative;
     z-index: 2;
+    padding: 0 24px;
+    /* Added side padding for mobile safety */
 }
 
 /* Header & Intro */
 /* Floating Navbar */
 .nav-container {
     position: fixed;
-    top: 32px;
+    top: 24px;
+    /* Slightly tighter */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
@@ -157,14 +167,16 @@ main {
 
 /* Hero Section */
 .hero-section {
-    padding-top: 180px;
-    padding-bottom: 120px;
+    padding-top: 140px;
+    /* Reduced from 180px */
+    padding-bottom: 60px;
+    /* Reduced from 120px */
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 48px;
-    /* Slightly more breathing room for the content below */
+    gap: 32px;
+    /* Reduced from 48px */
 }
 
 .hero-name-container {
@@ -173,22 +185,24 @@ main {
     align-items: center;
     gap: 0;
     position: relative;
-    /* Removed fixed width constraints if any */
 }
 
 .hero-title {
-    font-size: 200px;
+    font-size: 180px;
+    /* Slight reduction for desktop */
     font-weight: 800;
     letter-spacing: -0.06em;
     line-height: 0.75;
     color: var(--text-primary);
-    transform: translateX(80px);
+    transform: translateX(60px);
+    /* Adjusted for size */
     z-index: 2;
     margin-bottom: 0px;
 }
 
 .hero-arabic {
-    font-size: 250px;
+    font-size: 220px;
+    /* Slight reduction for desktop */
     font-weight: 700;
     color: var(--text-primary);
     font-family: 'IBM Plex Sans Arabic', sans-serif;
@@ -198,7 +212,8 @@ main {
     left: 0;
     bottom: 0;
     opacity: 1;
-    transform: translateX(-80px);
+    transform: translateX(-60px);
+    /* Adjusted for size */
     line-height: 0.9;
     z-index: 1;
 }
@@ -206,11 +221,11 @@ main {
 .hero-description {
     margin-top: 16px;
     font-family: var(--font-mono);
-    font-size: 16px;
-    /* Bigger subtext */
+    font-size: 15px;
+    /* Slightly smaller for cleaner look */
     color: var(--text-secondary);
-    max-width: 500px;
-    /* Wider to accommodate text */
+    max-width: 460px;
+    /* Tighter width */
     line-height: 1.6;
     letter-spacing: -0.02em;
 }
@@ -219,11 +234,13 @@ main {
 .divider-container {
     display: flex;
     justify-content: center;
-    padding: 40px 0;
+    padding: 24px 0;
+    /* Reduced from 40px */
 }
 
 .flower-icon {
-    font-size: 24px;
+    font-size: 20px;
+    /* Smaller icon */
     color: var(--text-tertiary);
     animation: rotate-flower 10s linear infinite;
     display: block;
@@ -241,7 +258,6 @@ main {
 
 .intro-text {
     font-family: var(--font-sans);
-    /* Use Sans for a cleaner, modern look, Mix Serif for emphasis */
     font-size: 38px;
     line-height: 1.4;
     font-weight: 400;
@@ -266,7 +282,8 @@ main {
 .social-link {
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
+    /* Smaller for cleaner look */
     font-weight: 500;
     position: relative;
     transition: color 0.3s ease;
@@ -298,7 +315,8 @@ main {
 section {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 24px;
+    /* Reduced from 32px */
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
@@ -338,25 +356,23 @@ h2::after {
 .item-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    /* Spacing between cards */
+    /* Removed gap, using padding/borders */
 }
 
 .item {
     position: relative;
-    display: flex;
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    /* Smaller image connection (64px) */
     align-items: center;
-    justify-content: space-between;
-    padding: 20px 24px;
+    gap: 24px;
+    padding: 24px 0;
+    /* Tighter padding */
     text-decoration: none;
-    border-radius: 12px;
-    background-color: transparent;
     border-bottom: 1px solid var(--border-color);
-    transition: background-color 0.2s ease;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     cursor: pointer;
-    /* Changed cursor since we have hover effect */
-    /* overflow: visible; Removed for better layout */
-    /* For spotlight */
+    border-radius: 16px;
 
     /* Animation defaults */
     opacity: 0;
@@ -405,109 +421,6 @@ section.animate-in .item:nth-child(8) {
     animation-delay: 0.4s;
 }
 
-.item[href] {
-    cursor: pointer;
-}
-
-.item:hover {
-    background-color: var(--card-bg);
-    border-color: var(--border-color);
-}
-
-/* Spotlight Gradient */
-.item::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0),
-            var(--spotlight-color),
-            transparent 40%);
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.item:hover::before {
-    opacity: 1;
-}
-
-.item-left {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    position: relative;
-    z-index: 1;
-}
-
-/* Marquee Section */
-.marquee-container {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    overflow: hidden;
-    padding: 40px 0;
-    background: transparent;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-}
-
-.marquee-content {
-    display: flex;
-    gap: 60px;
-    animation: marquee-scroll 40s linear infinite;
-    width: max-content;
-    align-items: center;
-}
-
-.marquee-item {
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--text-tertiary);
-    white-space: nowrap;
-    opacity: 0.7;
-    transition: opacity 0.2s;
-}
-
-.marquee-item:hover {
-    opacity: 1;
-    color: var(--text-primary);
-}
-
-@keyframes marquee-scroll {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-/* Updated Item List Styles */
-.item-list {
-    display: flex;
-    flex-direction: column;
-}
-
-.item {
-    position: relative;
-    display: grid;
-    grid-template-columns: 80px 1fr auto;
-    /* Image - Info - Date */
-    align-items: center;
-    gap: 32px;
-    padding: 32px 0;
-    text-decoration: none;
-    border-bottom: 1px solid var(--border-color);
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    cursor: pointer;
-    border-radius: 24px;
-    /* Softens hover state if we add bg */
-}
-
 .item:first-child {
     border-top: 1px solid var(--border-color);
 }
@@ -519,13 +432,14 @@ section.animate-in .item:nth-child(8) {
 
 .item:hover .item-title {
     color: #0066FF;
-    /* Blue highlight on hover */
 }
 
 .logo-container {
-    width: 80px;
-    height: 80px;
-    border-radius: 20px;
+    width: 64px;
+    /* Reduced from 80px */
+    height: 64px;
+    /* Reduced from 80px */
+    border-radius: 16px;
     background-color: #F8F8F8;
     display: flex;
     align-items: center;
@@ -548,24 +462,21 @@ section.animate-in .item:nth-child(8) {
 .item-info {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
+    /* Tighter gap */
     align-items: flex-start;
 }
 
-.item-left {
-    /* Resetting this since we switched to Grid */
-    display: contents;
-}
-
 .item-title {
-    font-size: 18px;
+    font-size: 16px;
+    /* Slightly refined */
     font-weight: 500;
     color: var(--text-primary);
     transition: color 0.2s;
 }
 
 .item-subtitle {
-    font-size: 15px;
+    font-size: 14px;
     color: var(--text-secondary);
     font-weight: 400;
 }
@@ -575,7 +486,7 @@ section.animate-in .item:nth-child(8) {
 }
 
 .item-date {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-tertiary);
     font-feature-settings: "tnum";
 }
@@ -678,35 +589,90 @@ section.animate-in .item:nth-child(8) {
 /* Responsive */
 @media (max-width: 600px) {
     body {
-        padding: 60px 20px;
+        padding: 0;
+        /* Mobile padding handled by main */
+    }
+
+    /* Adjust main spacing for mobile */
+    main {
+        padding: 0 20px;
+        --spacing-section: 60px;
+        /* Even tighter on mobile */
+    }
+
+    .hero-section {
+        padding-top: 120px;
+        padding-bottom: 40px;
+        gap: 24px;
+    }
+
+    .hero-title {
+        font-size: 80px;
+        /* Drastically reduced for mobile fit */
+        transform: translateX(20px);
+    }
+
+    .hero-arabic {
+        font-size: 100px;
+        /* Drastically reduced for mobile fit */
+        transform: translateX(-20px);
+    }
+
+    .hero-description {
+        font-size: 14px;
+        padding: 0 10px;
     }
 
     .intro-text {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .item {
-        padding: 16px;
+        display: flex;
+        /* Switch to flex since grid columns are hard to stack neatly with content order */
         flex-direction: column;
         align-items: flex-start;
-        gap: 16px;
+        gap: 12px;
+        padding: 20px 0;
+    }
+
+    .logo-container {
+        width: 56px;
+        height: 56px;
     }
 
     .item-right {
         width: 100%;
         text-align: left;
-        padding-left: 68px;
-        /* Align with text */
+        padding-left: 0;
+        /* Reset padding */
+        margin-top: -4px;
+        /* Pull date closer */
+        display: flex;
+    }
+
+    .item-date {
+        font-size: 12px;
+        background: rgba(0, 0, 0, 0.05);
+        padding: 4px 8px;
+        border-radius: 6px;
+    }
+
+    /* Ensure no horizontal scroll from transforms */
+    body,
+    html {
+        overflow-x: hidden;
     }
 }
 
 /* About Section */
 .about-text {
     font-family: var(--font-body);
-    font-size: 20px;
+    font-size: 18px;
+    /* Slightly smaller */
     line-height: 1.7;
     color: var(--text-secondary);
-    max-width: 680px;
+    max-width: 640px;
     margin: 0 auto;
     text-align: center;
     font-weight: 400;
