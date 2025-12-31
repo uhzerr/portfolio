@@ -5,51 +5,89 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Azhar Kheraj</title>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-sans/style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Times+New+Roman&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <!-- Fallback for Arabic aesthetics if needed -->
+
   <link rel="stylesheet" href="style.css" />
   <meta name="description" content="Azhar Kheraj - Econ + Data Science @ UW-Madison" />
-  <style>
-    /* Inline quick fix for specific logo tweaks if needed */
-  </style>
 </head>
 
 <body>
+
+  <!-- Floating Navbar -->
+  <nav class="nav-container">
+    <div class="pill-nav">
+      <a href="#" class="nav-link active">Work</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
   <main>
-    <header>
-      <div class="header-top">
-        <!-- Status Pill -->
-        <div class="pill">
-          <div class="pill-dot"></div>
-          <span>Open to work</span>
-        </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-name-container">
+        <h1 class="hero-title">azhar</h1>
+        <h2 class="hero-arabic">أزهر</h2>
       </div>
 
-      <div class="intro-text">
-        Azhar Kheraj is an <em>Economics & Data Science</em> student at UW-Madison, exploring the intersection of
-        finance, analytics, and social impact.
-      </div>
+      <p class="hero-description">
+        Economics & Data Science student at UW-Madison. Building at the intersection of finance, analytics, and social
+        impact.
+      </p>
+    </section>
 
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/azhar-kheraj-732976227" target="_blank" rel="noopener noreferrer"
-          class="social-link">LinkedIn</a>
-        <a href="https://github.com/uhzerr" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
-        <a href="mailto:kheraj@wisc.edu" class="social-link">Email</a>
-      </div>
-    </header>
+    <!-- Divider -->
+    <div class="divider-container">
+      <span class="flower-icon">✿</span>
+    </div>
 
-    <section>
-      <h2>Experience</h2>
+    <!-- Marquee Section -->
+    <div class="marquee-container">
+      <div class="marquee-content">
+        <!-- Replicating items for infinite scroll effect (x2) -->
+        <span class="marquee-item">HELPED FOUNDERS AND TEAMS AT</span>
+        <span class="marquee-item">SKLAR KIRSH LLP</span>
+        <span class="marquee-item">CROSSROADS</span>
+        <span class="marquee-item">HABITAT FOR HUMANITY</span>
+        <span class="marquee-item">NEWGROUND</span>
+        <span class="marquee-item">SIGMA ALPHA EPSILON</span>
+        <span class="marquee-item">UW MADISON</span>
+
+        <span class="marquee-item">✿</span>
+
+        <span class="marquee-item">HELPED FOUNDERS AND TEAMS AT</span>
+        <span class="marquee-item">SKLAR KIRSH LLP</span>
+        <span class="marquee-item">CROSSROADS</span>
+        <span class="marquee-item">HABITAT FOR HUMANITY</span>
+        <span class="marquee-item">NEWGROUND</span>
+        <span class="marquee-item">SIGMA ALPHA EPSILON</span>
+        <span class="marquee-item">UW MADISON</span>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="divider-container">
+      <span class="flower-icon">✿</span>
+    </div>
+
+    <!-- Experience Section -->
+    <section id="work">
       <div class="item-list">
 
         <a href="https://sae.net" target="_blank" rel="noopener noreferrer" class="item">
-          <div class="item-left">
-            <div class="logo-container">
-              <img src="https://www.google.com/s2/favicons?sz=128&domain=sae.net" alt="SAE"
-                onerror="this.style.display='none'; this.parentElement.innerText='SAE'" />
-            </div>
-            <div class="item-info">
-              <span class="item-title">Sigma Alpha Epsilon Fraternity</span>
-              <span class="item-subtitle">House Manager & PR Chair</span>
-            </div>
+          <div class="logo-container">
+            <img src="https://www.google.com/s2/favicons?sz=128&domain=sae.net" alt="SAE" />
+          </div>
+          <div class="item-info">
+            <span class="item-title">Sigma Alpha Epsilon</span>
+            <span class="item-subtitle">House Manager & PR Chair</span>
           </div>
           <div class="item-right">
             <span class="item-date">Present</span>
@@ -57,15 +95,12 @@
         </a>
 
         <a href="https://www.sklarkirsh.com" target="_blank" rel="noopener noreferrer" class="item">
-          <div class="item-left">
-            <div class="logo-container">
-              <img src="https://www.google.com/s2/favicons?sz=128&domain=sklarkirsh.com" alt="Sklar Kirsh"
-                onerror="this.style.display='none'; this.parentElement.innerText='SK'" />
-            </div>
-            <div class="item-info">
-              <span class="item-title">Sklar Kirsh LLP</span>
-              <span class="item-subtitle">Legal Intern</span>
-            </div>
+          <div class="logo-container">
+            <img src="https://www.google.com/s2/favicons?sz=128&domain=sklarkirsh.com" alt="Sklar Kirsh" />
+          </div>
+          <div class="item-info">
+            <span class="item-title">Sklar Kirsh LLP</span>
+            <span class="item-subtitle">Legal Intern</span>
           </div>
           <div class="item-right">
             <span class="item-date">2025</span>
@@ -73,15 +108,13 @@
         </a>
 
         <a href="https://www.xrds.org" target="_blank" rel="noopener noreferrer" class="item">
-          <div class="item-left">
-            <div class="logo-container">
-              <img src="assets/logos/crossroads.webp" alt="Crossroads"
-                onerror="this.style.display='none'; this.parentElement.innerText='CS'" />
-            </div>
-            <div class="item-info">
-              <span class="item-title">Crossroads School</span>
-              <span class="item-subtitle">Swim Instructor / Lifeguard</span>
-            </div>
+          <div class="logo-container">
+            <img src="assets/logos/crossroads.webp" alt="Crossroads"
+              onerror="this.src='https://www.google.com/s2/favicons?sz=128&domain=xrds.org'" />
+          </div>
+          <div class="item-info">
+            <span class="item-title">Crossroads School</span>
+            <span class="item-subtitle">Swim Instructor / Lifeguard</span>
           </div>
           <div class="item-right">
             <span class="item-date">2022 — 2025</span>
@@ -89,14 +122,13 @@
         </a>
 
         <a href="https://www.habitat.org" target="_blank" rel="noopener noreferrer" class="item">
-          <div class="item-left">
-            <div class="logo-container">
-              <img src="assets/logos/habitat.webp" alt="Habitat" />
-            </div>
-            <div class="item-info">
-              <span class="item-title">Habitat for Humanity</span>
-              <span class="item-subtitle">Sales Associate</span>
-            </div>
+          <div class="logo-container">
+            <img src="assets/logos/habitat.webp" alt="Habitat"
+              onerror="this.src='https://www.google.com/s2/favicons?sz=128&domain=habitat.org'" />
+          </div>
+          <div class="item-info">
+            <span class="item-title">Habitat for Humanity</span>
+            <span class="item-subtitle">Sales Associate</span>
           </div>
           <div class="item-right">
             <span class="item-date">2024</span>
@@ -104,15 +136,13 @@
         </a>
 
         <a href="https://muslimjewishnewground.org" target="_blank" rel="noopener noreferrer" class="item">
-          <div class="item-left">
-            <div class="logo-container">
-              <img src="assets/logos/mjnewground.webp" alt="NewGround"
-                onerror="this.style.display='none'; this.parentElement.innerText='NG'" />
-            </div>
-            <div class="item-info">
-              <span class="item-title">NewGround</span>
-              <span class="item-subtitle">MAJIC Leadership Council</span>
-            </div>
+          <div class="logo-container">
+            <img src="assets/logos/mjnewground.webp" alt="NewGround"
+              onerror="this.src='https://www.google.com/s2/favicons?sz=128&domain=muslimjewishnewground.org'" />
+          </div>
+          <div class="item-info">
+            <span class="item-title">NewGround</span>
+            <span class="item-subtitle">MAJIC Leadership Council</span>
           </div>
           <div class="item-right">
             <span class="item-date">2021 — 2022</span>
@@ -122,20 +152,23 @@
       </div>
     </section>
 
+    <!-- Divider -->
+    <div class="divider-container">
+      <span class="flower-icon">✿</span>
+    </div>
+
+    <!-- Education Section -->
     <section>
-      <h2>Education</h2>
       <div class="item-list">
         <a href="https://www.wisc.edu" target="_blank" rel="noopener noreferrer" class="item">
-          <div class="item-left">
-            <div class="logo-container">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Wisconsin_Badgers_logo.svg/1200px-Wisconsin_Badgers_logo.svg.png"
-                alt="UW Madison" style="padding: 2px;" />
-            </div>
-            <div class="item-info">
-              <span class="item-title">University of Wisconsin-Madison</span>
-              <span class="item-subtitle">BS, Economics & Data Science</span>
-            </div>
+          <div class="logo-container">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Wisconsin_Badgers_logo.svg/1200px-Wisconsin_Badgers_logo.svg.png"
+              alt="UW Madison" style="padding: 10px;" />
+          </div>
+          <div class="item-info">
+            <span class="item-title">University of Wisconsin-Madison</span>
+            <span class="item-subtitle">BS, Economics & Data Science</span>
           </div>
           <div class="item-right">
             <span class="item-date">2024 — 2028</span>
@@ -143,15 +176,12 @@
         </a>
 
         <div class="item" style="cursor: default;">
-          <div class="item-left">
-            <div class="logo-container">
-              <img src="https://www.google.com/s2/favicons?sz=128&domain=loyolahs.edu" alt="Loyola HS"
-                onerror="this.style.display='none'; this.parentElement.innerText='LHS'" />
-            </div>
-            <div class="item-info">
-              <span class="item-title">Loyola High School of Los Angeles</span>
-              <span class="item-subtitle">High School Diploma</span>
-            </div>
+          <div class="logo-container">
+            <img src="https://www.google.com/s2/favicons?sz=128&domain=loyolahs.edu" alt="Loyola HS" />
+          </div>
+          <div class="item-info">
+            <span class="item-title">Loyola High School</span>
+            <span class="item-subtitle">High School Diploma</span>
           </div>
           <div class="item-right">
             <span class="item-date">2021 — 2024</span>
@@ -160,24 +190,39 @@
       </div>
     </section>
 
-    <section>
-      <h2>Volunteering</h2>
-      <div class="item-list">
-        <a href="https://the.ismaili/global-encounters" target="_blank" rel="noopener noreferrer" class="item">
-          <div class="item-left">
-            <div class="logo-container">
-              <img src="https://www.google.com/s2/favicons?sz=128&domain=the.ismaili" alt="Global Encounters"
-                onerror="this.style.display='none'; this.parentElement.innerText='GE'" />
-            </div>
-            <div class="item-info">
-              <span class="item-title">Global Encounters Programme</span>
-              <span class="item-subtitle">Co-Participant Rep.</span>
-            </div>
-          </div>
-          <div class="item-right">
-            <span class="item-date">2022</span>
-          </div>
-        </a>
+    <!-- Divider -->
+    <div class="divider-container">
+      <span class="flower-icon">✿</span>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" style="align-items: center; padding: 40px 20px;">
+      <p class="about-text">
+        I study <span class="about-highlight">Economics & Data Science</span> at the <span
+          class="about-highlight">University of Wisconsin-Madison</span>. My professional path combines analytical rigor
+        with creative problem-solving, demonstrated through my work at <span class="about-highlight">Sklar Kirsh
+          LLP</span> and <span class="about-highlight">Habitat for Humanity</span>.
+      </p>
+      <p class="about-text" style="margin-top: 24px;">
+        I am deeply committed to community service, having raised funds for hygiene initiatives with <span
+          class="about-highlight">Global Encounters</span> and educated visitors at the <span
+          class="about-highlight">Roundhouse Aquarium</span>. Currently, I serve as House Manager and PR Chair for <span
+          class="about-highlight">Sigma Alpha Epsilon</span>.
+      </p>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider-container">
+      <span class="flower-icon">✿</span>
+    </div>
+
+    <!-- Footer / Socials -->
+    <section class="hero-section" id="contact" style="padding-top: 0;">
+      <div class="social-links" style="display: flex; gap: 24px;">
+        <a href="https://www.linkedin.com/in/azhar-kheraj-732976227" target="_blank" rel="noopener noreferrer"
+          class="social-link">LinkedIn</a>
+        <a href="https://github.com/uhzerr" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+        <a href="mailto:kheraj@wisc.edu" class="social-link">Email</a>
       </div>
     </section>
 
