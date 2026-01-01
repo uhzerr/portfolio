@@ -1,19 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
 
 :root {
-    /* Nihxl.com Inspired Variables */
-    --bg-color: #FAFAFA;
-    --text-primary: #1A1A1A;
-    --text-secondary: #4A4A4A;
-    --text-tertiary: #8A8A8A;
-    --accent-glow: rgba(0, 102, 255, 0.12);
-    --border-color: #EEEEEE;
+    /* Professional Dark Blue / Light Blue Theme */
+    --bg-color: #020617;
+    /* Very Dark Blue */
+    --text-primary: #BAE6FD;
+    /* Light Blue 200 */
+    --text-secondary: #7DD3FC;
+    /* Light Blue 300 */
+    --text-tertiary: #38BDF8;
+    /* Light Blue 400 */
+    --accent-glow: rgba(56, 189, 248, 0.15);
+    --border-color: rgba(56, 189, 248, 0.2);
 
-    --pill-bg: rgba(255, 255, 255, 0.65);
-    --pill-border: rgba(255, 255, 255, 0.4);
-    --pill-active-bg: rgba(0, 0, 0, 0.05);
-    --pill-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 10px 15px -3px rgba(0, 0, 0, 0.03);
-    --pill-inset-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    --pill-bg: rgba(15, 23, 42, 0.8);
+    --pill-border: rgba(56, 189, 248, 0.3);
+    --pill-active-bg: rgba(56, 189, 248, 0.1);
+    --pill-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    --pill-inset-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.1);
 
     --card-bg: #FFFFFF;
     --card-hover-border: rgba(0, 0, 0, 0.1);
@@ -35,19 +39,17 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg-color: #050505;
-        --text-primary: #EDEDED;
-        --text-secondary: #999999;
-        --text-tertiary: #555555;
-        --accent-glow: rgba(0, 102, 255, 0.08);
-        --border-color: #1A1A1A;
+        --bg-color: #020617;
+        --text-primary: #F0F9FF;
+        --text-secondary: #BAE6FD;
+        --text-tertiary: #7DD3FC;
+        --accent-glow: rgba(56, 189, 248, 0.2);
+        --border-color: rgba(56, 189, 248, 0.3);
 
-        --pill-bg: rgba(20, 20, 20, 0.7);
-        --pill-border: rgba(255, 255, 255, 0.1);
-        --pill-text: #EDEDED;
-        --pill-active-bg: rgba(255, 255, 255, 0.1);
-        --pill-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-        --pill-inset-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+        --pill-bg: rgba(15, 23, 42, 0.9);
+        --pill-border: rgba(56, 189, 248, 0.4);
+        --pill-text: #F0F9FF;
+        --pill-active-bg: rgba(56, 189, 248, 0.2);
     }
 }
 
@@ -88,14 +90,10 @@ body::before {
     pointer-events: none;
     z-index: 99;
     animation: grain-animation 0.4s steps(10) infinite;
-    opacity: 0.35;
-}
-
-@media (prefers-color-scheme: dark) {
-    body::before {
-        filter: invert(1);
-        opacity: 0.4;
-    }
+    opacity: 0.15;
+    /* Slighting lower for dark background */
+    filter: invert(1);
+    /* Inverted for light grains on dark */
 }
 
 main {
@@ -175,34 +173,21 @@ main {
 }
 
 .hero-title {
-    font-size: 180px;
-    /* Slight reduction for desktop */
-    font-weight: 800;
-    letter-spacing: -0.06em;
-    line-height: 0.75;
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
     color: var(--text-primary);
-    transform: translateX(60px);
-    /* Adjusted for size */
     z-index: 2;
-    margin-bottom: 0px;
+    margin-bottom: 8px;
 }
 
-.hero-arabic {
-    font-size: 220px;
-    /* Slight reduction for desktop */
-    font-weight: 700;
-    color: var(--text-primary);
-    font-family: 'IBM Plex Sans Arabic', sans-serif;
-    position: relative;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    opacity: 1;
-    transform: translateX(-60px);
-    /* Adjusted for size */
-    line-height: 0.9;
-    z-index: 1;
+.hero-subtitle {
+    font-size: 18px;
+    color: var(--text-tertiary);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .hero-description {
@@ -418,21 +403,20 @@ section.animate-in .item:nth-child(8) {
 }
 
 .item:hover .item-title {
-    color: #0066FF;
+    color: var(--text-tertiary);
 }
 
 .logo-container {
     width: 64px;
-    /* Reduced from 80px */
     height: 64px;
-    /* Reduced from 80px */
     border-radius: 16px;
-    background-color: #F8F8F8;
+    background-color: rgba(56, 189, 248, 0.05);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    border: 1px solid var(--border-color);
 }
 
 .item:hover .logo-container {
@@ -594,15 +578,7 @@ section.animate-in .item:nth-child(8) {
     }
 
     .hero-title {
-        font-size: 80px;
-        /* Drastically reduced for mobile fit */
-        transform: translateX(20px);
-    }
-
-    .hero-arabic {
-        font-size: 100px;
-        /* Drastically reduced for mobile fit */
-        transform: translateX(-20px);
+        font-size: 48px;
     }
 
     .hero-description {
